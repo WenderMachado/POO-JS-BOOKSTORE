@@ -5,6 +5,5 @@ module.exports = class Poster extends Product{
     super(name, description, price, inStock)
     this.height = height
     this.width = width
-
   }
 }
