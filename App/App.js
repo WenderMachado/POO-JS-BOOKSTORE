@@ -15,7 +15,7 @@ module.exports = class App {
   }
 
   getUsers(){
-    App.#database.find(`users`)
+   return App.#database.find(`users`)
   }
 
   createAuthor(name, nationality, bio){
@@ -23,13 +23,16 @@ module.exports = class App {
     App.#database.saveAuthor(author)
   }
 
-  getAuhor(){
+  getAuthor(){
     return App.#database.find(`authors`)
   }
 
   createBook(title, synopsis , genre, pages, author, description, price, inStock){
     const book = new Book(title, synopsis , genre, pages, author, description, price, inStock)
     App.#database.saveBook(book)
+  }
+    getBooks() {
+    return App.#database.find('books')
   }
   addBook(bookName, quantity){
     App.#database.addBooksToStock(bookName, quantity)
@@ -38,6 +41,9 @@ module.exports = class App {
   createPoster(name, description, height, width, price, inStock){
     const poster = new Poster(name, height, width, description, price, inStock)
     App.#database.savePoster(poster)
+  }
+  getPosters(){
+    return App.#database.find(`posters`)
   }
   addPoster(posterName, quantity){
     App.#database.addPostersToStock(posterName, quantity)

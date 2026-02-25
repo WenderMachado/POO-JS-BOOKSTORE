@@ -13,7 +13,7 @@ module.exports = class Database{
   }
 
   saveAuthor(author){
-    this.#storage.authors,push(author)
+    this.#storage.authors.push(author)
   }
 
   saveBook(book){
